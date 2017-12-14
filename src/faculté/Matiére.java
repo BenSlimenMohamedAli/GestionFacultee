@@ -24,4 +24,12 @@ public class Matiére {
     public void setCoef(float coef) {
         this.coef = coef;
     }
+
+    @Override
+    public String toString() {
+        return "Matiére{" +
+                " nom='" + nom + '\'' +
+                ", coef=" + coef +
+                '}';
+    }
 }
