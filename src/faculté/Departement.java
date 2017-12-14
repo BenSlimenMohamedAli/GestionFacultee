@@ -129,7 +129,7 @@ public class Departement{
     }
 
     //Supprimer une section
-    public void suppEtudiant (String nom)throws NotFoundException{
+    public void suppSection (String nom)throws NotFoundException{
         boolean deleted = false;
         for(int i=0;i<sections.size();i++){
             if((sections.get(i).getNom()).equals(nom)){

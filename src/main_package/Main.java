@@ -67,12 +67,27 @@ public class Main {
                         // La manipulation du département
                         int rep2 = 1;
                         do{
-                            System.out.println("1) Ajouter une section\n" +
-                                    "2) Supprimer une section\n" +
-                                    "3) Ajouter un professeur \n" +
-                                    "4) Supprimer un professeur\n" +
-                                    "5) Manipuler une section\n");
+                            int rep3 = 0;
+                            do {
+                                System.out.println("1) Ajouter une section\n" +
+                                        "2) Supprimer une section\n" +
+                                        "3) Ajouter un professeur \n" +
+                                        "4) Supprimer un professeur\n" +
+                                        "5) Manipuler une section\n");
+                                rep3 = in.nextInt();
+                            }while(rep3 < 1 || rep3 > 5);
+
+                            switch(rep3){
+                                case 1 :
+                                    System.out.println("Donner le nom de la section");
+                                    in.nextLine();String nomSection = in.nextLine();
+                                    //TODO
+                                    break;
+                            }
+
+
                             // TODO
+
 
                             do {
                                 System.out.println("Voulez vous continuez a manipuler se département :\n1) Si oui \n2) Si non");
