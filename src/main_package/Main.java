@@ -27,6 +27,7 @@ public class Main {
             // Les choix
             switch(rep1){
                 case 1 :
+
                     System.out.println("Donner le nom du département : ");
                     in.nextLine();String nomDep = in.nextLine();
                     System.out.println("Donner le nom du chef de département : ");
