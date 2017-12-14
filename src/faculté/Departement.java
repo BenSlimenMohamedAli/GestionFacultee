@@ -2,7 +2,7 @@ package faculté;
 
 import java.util.ArrayList;
 
-public class Departement {
+public class Departement{
     private String nom;
     private ChefDepartement chefDepartement;
     private ArrayList<Etudiant> etudiants;
@@ -77,8 +77,16 @@ public class Departement {
 
     //Supprimer un etudiant
 
-    public void suppEtudiant(Etudiant e){
-        etudiants.remove(e);
+    public void suppEtudiant (int cin)throws NotFoundException{
+        boolean deleted = false;
+        for(int i=0;i<etudiants.size();i++){
+            if(etudiants.get(i).getCIN() == cin){
+                deleted = true;
+                etudiants.remove(etudiants.get(i));
+                break;
+            }
+        }
+        if(deleted == false) throw new NotFoundException();
     }
 
     // Afficher la liste des etudiants
@@ -95,8 +103,16 @@ public class Departement {
         professeurs.add(p);
     }
     // Supprimer un professeur
-    public void suppProfesseur(Professeur p){
-        professeurs.remove(p);
+    public void suppProfesseur (int cin)throws NotFoundException{
+        boolean deleted = false;
+        for(int i=0;i<professeurs.size();i++){
+            if(professeurs.get(i).getCIN() == cin){
+                deleted = true;
+                professeurs.remove(professeurs.get(i));
+                break;
+            }
+        }
+        if(deleted == false) throw new NotFoundException();
     }
     // afficher la liste des professeurs
     public String listProfesseurs(){
@@ -113,8 +129,16 @@ public class Departement {
     }
 
     //Supprimer une section
-    public void suppSection(Section s){
-        sections.remove(s);
+    public void suppEtudiant (String nom)throws NotFoundException{
+        boolean deleted = false;
+        for(int i=0;i<sections.size();i++){
+            if((sections.get(i).getNom()).equals(nom)){
+                deleted = true;
+                sections.remove(sections.get(i));
+                break;
+            }
+        }
+        if(deleted == false) throw new NotFoundException();
     }
 
     //Afficher la liste des sections

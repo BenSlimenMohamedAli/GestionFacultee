@@ -15,8 +15,20 @@ public class Faculté {
         departements.add(d);
     }
 
-    public void suppDepartement(Departement d){
-        departements.remove(d);
+    public void suppDepartement (String nom)throws NotFoundException{
+        boolean deleted = false;
+        for(int i=0;i<departements.size();i++){
+            if((departements.get(i).getNom()).equals(nom)){
+                deleted = true;
+                departements.remove(departements.get(i));
+                break;
+            }
+        }
+        if(deleted == false) throw new NotFoundException();
+    }
+
+    public ArrayList<Departement> getDepartements() {
+        return departements;
     }
 
     private String nomsDEps(){
